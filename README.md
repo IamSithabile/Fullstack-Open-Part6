@@ -1,6 +1,6 @@
-# Fullstack-Open-Part5
+# Fullstack-Open-Part6
 
-A repository for exercises performed on part 5 : Testing react apps
+A repository for exercises performed on part 6 : State management with reedux
 
 # Getting Started with Create React App
 
