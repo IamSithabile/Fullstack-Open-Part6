@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     getAll().then(anecdotes => dispatch(setAnecdotes(anecdotes)))
-  })
+  }, [dispatch])
   return (
     <>
       <h2>Anecdotes</h2>

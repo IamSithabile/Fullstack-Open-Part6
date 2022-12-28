@@ -28,8 +28,9 @@ const AnecdotesList = () => {
     }
   }
   sortedAnecdotes.sort(sortArray)
+  console.log(sortedAnecdotes)
 
-  let filteredArray = sortedAnecdotes?.filter(anecdote =>
+  let filteredArray = sortedAnecdotes.filter(anecdote =>
     anecdote.content.toLowerCase().includes(query)
   )
 
