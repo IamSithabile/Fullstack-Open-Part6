@@ -5,6 +5,11 @@ export const getAll = async () => {
   const request = await axios.get(baseUrl)
   return await request.data
 }
+export const vote = async (id, anecdote) => {
+  const voteAnecdote = { ...anecdote, votes: anecdote.votes + 1 }
+  const request = await axios.put(`${baseUrl}/${id}`, voteAnecdote)
+  return await request.data
+}
 
 export const createNew = async anecdote => {
   const getId = () => (100000 * Math.random()).toFixed(0)
