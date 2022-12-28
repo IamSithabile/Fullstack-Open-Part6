@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 
-import { setAnecdotes } from './reducers/anecdoteReducer'
-import { getAll } from './services/anecdotes'
+import { initializeAnecdotes } from './reducers/anecdoteReducer'
 
 import AnecdoteForm from './components/AnecdoteForm'
 import AnecdotesList from './components/AnecdotesList'
@@ -13,7 +12,7 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    getAll().then(anecdotes => dispatch(setAnecdotes(anecdotes)))
+    dispatch(initializeAnecdotes())
   }, [dispatch])
   return (
     <>

@@ -14,10 +14,12 @@ const AnecdoteForm = () => {
     const {
       target: { anecdote },
     } = e
+
     const returnedAnecdote = await createNew(anecdote.value)
-    console.log(returnedAnecdote)
+
     dispatch(createAnecdote(returnedAnecdote))
     dispatch(displayContent(anecdote.value))
+
     setTimeout(() => {
       dispatch(hideContent())
     }, 5000)
