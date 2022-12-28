@@ -17,8 +17,13 @@ export const { displayContent, hideContent } = notificationSlice.actions
 
 export const setNotification = (message, time = 5) => {
   return async dispatch => {
+    let myTimeout
+    if (myTimeout) {
+      clearTimeout(myTimeout)
+    }
     dispatch(displayContent(message))
-    setTimeout(() => {
+
+    myTimeout = setTimeout(() => {
       dispatch(hideContent())
     }, time * 1000)
   }
