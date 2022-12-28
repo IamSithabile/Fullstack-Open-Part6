@@ -52,7 +52,7 @@ export const addVote = id => {
   }
 }
 
-export const createAnecdote = content => {
-  return { type: 'CREATE', data: content }
+export const createAnecdote = anecdote => {
+  return { type: 'CREATE', data: anecdote }
 }
 export default reducer
