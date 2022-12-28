@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addVote } from '../reducers/anecdoteReducer'
 
 const AnecdotesList = () => {
-  const anecdotes = useSelector(state => state)
+  const anecdotes = useSelector(state => state.anecdotes)
   const dispatch = useDispatch()
 
   const vote = id => {
     dispatch(addVote(id))
   }
-
+  console.log(anecdotes)
   let sortedAnecdotes = [...anecdotes]
 
   const sortArray = (a, b) => {
