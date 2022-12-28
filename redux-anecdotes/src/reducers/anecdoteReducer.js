@@ -34,7 +34,9 @@ export const initializeAnecdotes = () => {
 
 export const addVote = anecdote => {
   return async dispatch => {
+    console.log(anecdote)
     const returnedAnecdote = await vote(anecdote.id, anecdote)
+    console.log(returnedAnecdote)
 
     dispatch(updateVote(returnedAnecdote))
   }
