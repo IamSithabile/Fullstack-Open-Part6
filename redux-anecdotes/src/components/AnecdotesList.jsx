@@ -5,6 +5,7 @@ import { displayVote, hideContent } from '../reducers/notificationReducer'
 
 const AnecdotesList = () => {
   const anecdotes = useSelector(state => state.anecdotes)
+  const query = useSelector(state => state.query)
   const dispatch = useDispatch()
 
   const vote = (id, content) => {
@@ -28,9 +29,13 @@ const AnecdotesList = () => {
   }
   sortedAnecdotes.sort(sortArray)
 
+  let filteredArray = sortedAnecdotes?.filter(anecdote =>
+    anecdote.content.toLowerCase().includes(query)
+  )
+
   return (
     <>
-      {sortedAnecdotes.map(anecdote => (
+      {filteredArray.map(anecdote => (
         <div key={anecdote.id}>
           <div>{anecdote.content}</div>
           <div>
