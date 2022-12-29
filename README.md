@@ -1,6 +1,6 @@
 # Fullstack-Open-Part6
 
-A repository for exercises performed on part 6 : State management with reedux
+A repository for exercises performed on part 6 : State management with redux
 
 # Getting Started with Create React App
 
